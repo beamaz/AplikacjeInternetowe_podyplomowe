@@ -22,6 +22,43 @@ body{
 </head>
 <body>
 
+<script>
+
+function zmienJezyk()
+{
+	var lokalizacja01;
+	var lokalizacja02;
+	
+	lokalizacja01 = document.getElementById("naglowek01");
+	lokalizacja02 = document.getElementById("naglowek02");
+	//lokalizacja.style.color = "green";
+	
+	lokalizacja01.textContent = "Login";
+	lokalizacja02.textContent = "Login into PUE";
+	
+}
+
+function emerytura()
+{
+	var userInput;
+	var liczbaWprowadzona;
+	var liczbaDoEmerytury;
+	
+	userInput = prompt('Podaj liczbę przepracowanych lat:');
+	liczbaWprowadzona = parseInt(userInput);
+	
+	liczbaDoEmerytury = 47 - liczbaWprowadzona;
+	
+	// wypisanie wyniku w komunikcie
+	//alert('Do emerytury pozostało: ' + liczbaDoEmerytury + ' lat.');
+	
+	document.write('Do emerytury pozostało: ' + liczbaDoEmerytury + ' lat.')
+}
+
+
+
+</script>
+
 <table>
 <thead>
   <tr>
@@ -46,7 +83,12 @@ body{
 	</td>
     <td>Zarejestruj w PUE |</td>
     <td>Zaloguj do PUE |</td>
-    <td><font style='font-family: "Times New Roman";'> MOBA</font></td>
+    <td>
+	<select>
+		<option>PL</option>
+		<option>ENG</option>
+	</select>
+	</td>
     <td>| aA</td>
     <td><font style='font-family: "Webdings";'>| N</font></td> 
 	
@@ -55,18 +97,21 @@ body{
 </table>
 <hr>
 
-<h1>Logowanie</h1>
+<h1 id="naglowek01">Logowanie</h1>
 <p align="center">
 <table class="tg">
 <thead>
   <tr>
     <td class="tg-0lax"></td>
-    <td class="tg-hqpa"><font style="color: white"><h2>Zaloguj się do PUE</h2>
+    <td class="tg-hqpa"><font style="color: white"><h2 id="naglowek02">Zaloguj się do PUE</h2>
 	Login &nbsp;<input type="text">
 	<br><br>
 	Hasło <input type="text">
 	<br><br><br><br>
 	<input type="submit" value="Zaloguj >">
+	<br>
+	<br>
+	<button onclick="emerytura();">Sprawdź liczbę dni do emerytury</button>
 	</td>
     <td class="tg-okss"><img src="a.png"></td>
     <td class="tg-0lax"></td>
